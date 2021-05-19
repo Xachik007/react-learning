@@ -5,14 +5,13 @@ import * as  axios from "axios";
 import userPhote from '../../assets/images/pngtree-user-vector-avatar-png-image_1541962.jpg';
 
 class Users extends React.Component {
-       constructor(props) {
-           super(props);
+
+       componentDidMount() {
            axios.get("https://social-network.samuraijs.com/api/1.0/users")
                .then(response => {
                    this.props.setUsers(response.data.items);
                })
        }
-
 
     render() {
         return <div>
